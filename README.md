@@ -1,58 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200" alt="Laravel Logo">
+  
+  <br>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+  <h1 align="center">CBT OSN (Computer Based Test - Olimpiade) 🚀</h1>
 
-## About Laravel
+  <p align="center">
+    Aplikasi Latihan Ujian OSN Interaktif yang Dilengkapi dengan Evaluasi AI (Kecerdasan Buatan).
+  </p>
+</div>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📖 Tentang Aplikasi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**CBT OSN** adalah platform ujian berbasis web (*Computer Based Test*) yang dikhususkan untuk membantu siswa-siswi jenjang SMP (dan jenjang lainnya) dalam mempersiapkan diri menghadapi Olimpiade Sains Nasional. 
 
-## Learning Laravel
+Berbeda dengan aplikasi ujian biasa, sistem ini terintegrasi langsung dengan **Kecerdasan Buatan (Google Gemini AI)**. Setelah menyelesaikan ujian, sistem tidak hanya menampilkan skor akhir, tetapi AI akan otomatis menganalisis pola jawaban siswa dan memberikan:
+1. **Evaluasi Akurasi:** Membedah di mana kelemahan dan kekuatan penguasaan materi siswa.
+2. **Strategi Ujian:** Saran taktis menghadapi sistem penilaian OSN (misal: sistem minus).
+3. **Saran Belajar Lanjutan:** Topik spesifik yang harus segera dipelajari ulang.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ✨ Fitur Utama
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- 🧠 **AI-Powered Evaluation:** Analisis gaya menjawab dan saran cerdas langsung dari AI.
+- 📊 **Statistik Performa & Tren:** Dashboard yang memantau perkembangan nilai, rata-rata durasi, dan tren naik-turunnya performa siswa.
+- 🎨 **Modern Glassmorphism UI:** Antarmuka super cantik, responsif, dan animasi transisi yang mulus.
+- 🌓 **Mode Gelap (Dark Mode):** Sistem pergantian mode terang/gelap otomatis untuk kenyamanan mata.
+- ⚡ **SPA-like Experience:** Menggunakan Livewire untuk perpindahan halaman dan interaksi ujian secepat kilat tanpa *loading* halaman penuh.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## 🛠️ Teknologi yang Digunakan
 
-## Agentic Development
+Proyek ini dibangun di atas fondasi teknologi modern (TALL Stack):
+- **[Laravel 11](https://laravel.com)** (PHP Framework)
+- **[Livewire 3](https://livewire.laravel.com)** (Reaktivitas Backend)
+- **[Alpine.js](https://alpinejs.dev)** (Reaktivitas Frontend Ringan)
+- **[Tailwind CSS](https://tailwindcss.com)** (Styling & Desain)
+- **MySQL** (Database)
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## 🚀 Cara Instalasi (Local Development)
 
-```bash
-composer require laravel/boost --dev
+Jika Anda ingin menjalankan aplikasi ini di komputer Anda sendiri, ikuti langkah-langkah berikut:
 
-php artisan boost:install
-```
+1. **Clone repository ini**
+   ```bash
+   git clone https://github.com/arkham55/CBT-OSN.git
+   cd CBT-OSN
+   ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+2. **Instal dependensi PHP & Node.js**
+   ```bash
+   composer install
+   npm install
+   ```
 
-## Contributing
+3. **Atur file konfigurasi**
+   Salin file `.env.example` menjadi `.env`:
+   ```bash
+   cp .env.example .env
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Konfigurasi Database & API Key**
+   Buka file `.env` dan atur koneksi database Anda. Jangan lupa tambahkan API Key Gemini Anda:
+   ```env
+   DB_DATABASE=nama_database_anda
+   DB_USERNAME=root
+   DB_PASSWORD=
 
-## Code of Conduct
+   GEMINI_API_KEY=masukkan_api_key_anda_di_sini
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. **Buat Key Aplikasi dan Jalankan Migrasi**
+   ```bash
+   php artisan key:generate
+   php artisan migrate:fresh --seed
+   ```
 
-## Security Vulnerabilities
+6. **Bangun aset (CSS/JS) & Jalankan Server**
+   Buka 2 terminal secara bersamaan:
+   ```bash
+   # Terminal 1 (Untuk membangun aset desain)
+   npm run build
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   # Terminal 2 (Untuk menjalankan server lokal)
+   php artisan serve
+   ```
+   
+Kunjungi `http://localhost:8000` di browser Anda! 🎉
 
-## License
+## 📝 Lisensi
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Aplikasi ini dikembangkan untuk kebutuhan latihan dan pendidikan. *Codebase* dasar menggunakan framework [Laravel](https://laravel.com) yang bersifat Open Source (Lisensi MIT).
