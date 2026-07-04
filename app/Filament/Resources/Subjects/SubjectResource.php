@@ -35,7 +35,7 @@ class SubjectResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            \App\Filament\Resources\Subjects\SubjectResource\RelationManagers\QuestionsRelationManager::class,
         ];
     }
 
